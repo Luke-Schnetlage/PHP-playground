@@ -80,7 +80,68 @@ foreach($character as $key => $value){
 	print "$key = $value <br>\n";
 }
 
+echo "<br><br>\n";
+
+$hashtable = array(
+					"b" => 50,
+					"d" => 100,
+					"c" => 30,
+					"a" => 20
+					);
+					
+foreach($hashtable as $k => $v){
+	print "$k = $v <br>\n";
+}
+//keysort
+ksort($hashtable);
+echo "After keysort: <br>\n";
+foreach($hashtable as $k => $v){
+	print "$k = $v <br>\n";
+}
+//value sort
+asort($hashtable);
+echo "after asort: <br>\n";
+foreach($hashtable as $k => $v){
+	print "$k = $v <br>\n";
+}
 ?>
+
+<h1>Array of Associate Arrays</h1>
+<p>
+<?php
+$shop = array(
+				array(
+						"Title" => "Freesia",
+						"Price" => 12.50,
+						"Stock" => 15)
+				,
+				array(
+						"Title" => "SunFlower",
+						"Price" => 8.00,
+						"Stock" => 18)
+				
+				,
+				array(
+						"Title" => "Rose",
+						"Price" => 15.00,
+						"Stock" => 8)
+				);//end of $shop
+
+echo "<h3>".count($shop) ." elements:</h3>";
+
+
+for ($row = 0; $row < count($shop); $row++){
+	echo "Item ". ($row +1). ":<br>\n";
+	foreach($shop[$row] as $k => $v){
+		echo "$k = $v<br>\n";
+	}
+	echo "<br>\n";
+}
+?>
+</p>
+
+
+
 
 </body>
 
