@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>
+	Luke Schnetlage's basic PHP
+	</title>
+	<meta charset="utf-8">
+	
+	<?php 
+		//variables
+		$first_name = "Indiana";
+		$last_name = "Jones";
+	
+	
+	?>
+</head>
+
+<body>
+
+<p>First name: <?php print $first_name; ?></p>
+<p>Last name: <?php print $last_name; ?></p>
+
+<h3>Variables</h3>
+
+<p>
+<?php
+$count = 10;
+$list_price = 9.50;
+$first_name = "Obama";
+$is_valid = true;
+$is_new = false;
+
+
+echo $count. " is a(n) ";
+echo (gettype($count) );
+echo "<br>\n"; //<br> breaks line in web page, \n breaks line in source code
+echo "$list_price is a(n) ";
+echo gettype($list_price);
+echo "<br>\n";
+echo $first_name . "<br>\n";
+echo $is_valid . "<br>\n";
+echo $is_new . "<br>\n";
+
+?>
+</p>
+
+
+
+<h3>
+Arithmetic Operators
+</h3>
+<p>
+<?php
+$x = 14;
+$y = 9;
+$z = $x + $y;
+echo "$x + $y = $z <br>\n";
+$z = $x - $y;
+echo "$x - $y = $z <br>\n";
+$z = $x * $y;
+echo "$x * $y = $z <br>\n";
+$z = $x / $y;
+$z = number_format($z,2);
+echo "$x / $y = $z <br>\n";
+$z = $x % $y;
+echo "$x % $y = $z <br>\n";
+?>
+</p>
+
+
+<h3>Dates</h3>
+<p>
+<?php
+date_default_timezone_set("America/Chicago");
+$date = date('m-d-y, D, g:i a');
+echo $date . "<br>\n";
+$date = date('d/m/y');
+echo $date . "<br>\n";
+
+?>
+</p>
+
+
+<h3>Relational Operators</h3>
+<p>
+<?php
+$first = 10;
+$second = 12;
+
+if($first == $second){
+	echo "$first equals $second";
+}
+else {
+	echo "$first does not equal $second";
+}
+?>
+</p>
+<h3>Loops</h3>
+<p>
+<?php
+$i = 1;
+while ($i <= 6){
+	echo $i . "<br>\n";
+	$i++;
+}
+?>
+</p>
+
+<?php
+for ($i = 1; $i <= 6; $i++){
+	echo $i;
+	for ($j =1;$j <= $i;$j++){
+		echo $j;
+	}
+}
+?>
+</body>
+
+</html>

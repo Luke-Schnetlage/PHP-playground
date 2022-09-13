@@ -1,0 +1,63 @@
+/*
+Luke Schnetlage
+9/11/2022
+CSCI 4000-10 
+Assignment 1
+*/
+article, aside, figure, footer, header, nav, section {
+    display: block;
+}
+html {
+	background-color: #5972fc;	
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+	width: 800px;
+	margin: 20px auto; 
+	padding: 2px;
+}
+
+header{
+    width: 800px;
+    margin: 2px auto;
+    padding: 20px 40px;
+    background-color: #92d0ac;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+main {
+    width: 800px;
+    margin: 2px auto;
+    padding: 20px 40px;
+    background-color: #92d0ac;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+h1, h2, h3, p {
+	margin: 0;
+	padding: 0;
+	color: #000000;
+}
+
+label {
+    width: 15em;
+    padding-right: 2px;
+    float: left;
+}
+
+#data input {
+    float: left;
+    width: 150px;
+    margin-bottom: 2px;
+}
+#buttons input {
+    float: left;
+    margin-bottom: 2px;
+}
+br {
+    clear: left;
+}
+
+
+
+
