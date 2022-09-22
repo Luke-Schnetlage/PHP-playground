@@ -1,0 +1,57 @@
+﻿article, aside, figure, footer, header, nav, section {
+    display: block;
+}
+html {
+	background-color: #99CC66;	
+}
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+	width: 800px;
+	margin: 20px auto; 
+	padding: 0;
+}
+#content {
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    background-color: #CCCC99;
+    border: 2px solid navy;
+}
+h1, h2, h3, p {
+	margin: 0;
+	padding: 0;
+	color: #006633;
+}
+label {
+    width: 10em;
+    padding-right: 1em;
+    float: left;
+}
+#data input {
+    float: left;
+    width: 15em;
+    margin-bottom: .5em;
+}
+#buttons input {
+    float: left;
+    margin-bottom: .5em;
+}
+br {
+    clear: left;
+}
+.error {
+    color: red;
+    font-weight: bold;
+	text-align: center;
+}
+
+a {
+	font-weight: bold;
+	color: #006633;
+}
+a:link, a:visited { 
+    color: #006633; 
+}
+a:hover, a:focus { 
+    color: #006633;
+}

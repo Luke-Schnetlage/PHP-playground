@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<h3>Function<h3>
+<h3>Function</h3>
 <?php
 function bighello(){
 	echo "<h1>HELLO</h1>";
@@ -130,8 +130,8 @@ $shop = array(
 echo "<h3>".count($shop) ." elements:</h3>";
 
 
-for ($row = 0; ($row + 1) < count($shop); $row++){
-	echo "Item ". $row. ":<br>\n";
+for ($row = 0; $row < count($shop); $row++){
+	echo "Item ". ($row +1). ":<br>\n";
 	foreach($shop[$row] as $k => $v){
 		echo "$k = $v<br>\n";
 	}
