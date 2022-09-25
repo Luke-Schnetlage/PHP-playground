@@ -1,0 +1,72 @@
+article,
+aside,
+figure,
+footer,
+header,
+nav,
+section {
+    display: block;
+}
+
+html {
+    background-color: #b0a8ee;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 800px;
+    margin: 20px auto;
+    padding: 0;
+}
+
+header {
+    width: auto;
+    margin: auto;
+    padding: 20px 40px;
+    background-color: #95d4af;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+main {
+    width: auto;
+    margin: auto;
+    padding: 20px 40px;
+    background-color: #aff9ce;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+    color: #000000;
+}
+
+label {
+    width: 15em;
+    padding-right: 1em;
+    float: left;
+}
+
+#data input {
+    float: left;
+    width: 10em;
+    margin-bottom: .5em;
+}
+
+#buttons input {
+    float: left;
+    margin-bottom: .5em;
+}
+
+br {
+    clear: left;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    text-align: left;
+}

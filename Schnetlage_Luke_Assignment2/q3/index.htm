@@ -1,24 +1,55 @@
-<?php
+<!--
+	Luke Schnetlage
+	9/25/2022
+	CSCI 4000
+	Assignment2
+ -->
 
-?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>
-		
+		Luke Schnetlage's Kung Fu Panda Po Magic Rectangle
 	</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style.css">
-	
+
 
 </head>
 
 <body>
 
-<main>
-	<h1></h1>
-	
-</main>
+	<header>
+		<h1>Luke Schnetlage's Kung Fu Panda Po Magic Rectangle</h1>
+	</header>
+
+	<main>
+		<p>Enter Po's row and column numbers.</p>
+		<!--Uses the post method-->
+		<form method="post" action="index_process.php">
+			<div id="data">
+				<label>Po's row:</label>
+				<input type="number" name="row">
+				<br>
+
+				<label>Po's column:</label>
+				<input type="number" name="column">
+				<br>
+
+
+			</div>
+			<br>
+			<div id="button">
+				<label>&nbsp;</label>
+				<input type="submit" value="generate Po's magic rectangle">
+				<br><br>
+			</div>
+
+			
+		</form>
+
+	</main>
 
 
 </body>

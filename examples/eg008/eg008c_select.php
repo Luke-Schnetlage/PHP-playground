@@ -1,0 +1,69 @@
+<?php
+require_once('eg008a_connect_database.php');
+
+$category_id = "1";
+$query = 
+"SELECT * FROM products 
+WHERE categoryID = :category_id 
+ORDER BY productID";
+
+$statement = $db->prepare($query);
+$statement->bindValue(':category_id',$category_id);
+$statement->execute();
+$products = $statement->fetchAll();
+/*
+$output = "";
+
+foreach($products as $p){
+	$output.=($p['productCode']);
+	$output.=  "; ";
+	$output.= ($p['productName']);
+	$output.=  "; ";
+	$output.= ($p['listPrice']);
+	$output.=  "<br>\n";
+}
+*/
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>eg008c select</title>
+<meta charset="utf-8">
+<link href="main2.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div id="content">
+<table style="width: 600px">
+	<tr>
+		<td style="width: 160px"><b>Code</b></td>
+		<td style="width: 340px"><b>Name</b></td>
+		<td><b>Price</b></td>
+	</tr>
+	<?php	
+	foreach($products as $p){
+			
+	
+?>	
+
+	<tr>
+		<td style="width: 160px"><?php echo($p['productCode']); ?></td>
+		<td style="width: 340px"><?php echo($p['productName']);?></td>
+		<td><?php echo($p['listPrice']);?></td>
+	</tr>
+
+
+<?php
+	}
+?>	
+
+</table>
+
+</div>
+
+</body>
+
+</html>

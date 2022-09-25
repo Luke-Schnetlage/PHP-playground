@@ -1,24 +1,45 @@
-<?php
+<!--
+	Luke Schnetlage
+	9/25/2022
+	CSCI 4000
+	Assignment2
+ -->
 
-?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>
-		
+		Luke Schnetlage's Kung Fu Panda Po Sequence
 	</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style.css">
-	
+
 
 </head>
 
 <body>
 
-<main>
-	<h1></h1>
-	
-</main>
+	<header>
+		<h1>Luke Schnetlage's Kung Fu Panda Po Sequence</h1>
+	</header>
+
+	<main>
+		<h3>Click on the buttons below to do Po's sequence.</h3>
+		<!--Uses the get method, presenting 4 buttons, only 1 can be clicked at a time -->
+		<form method="get" action="index_process.php">
+			<br><br>
+			<button type="submit" name="3n+5">Luke's Po sequence for 3n+5</button>
+			<br><br>
+			<button type="submit" name="9-3n">Luke's Po sequence for 9-3n</button>
+			<br><br>
+			<button type="submit" name="n^2+3">Luke's Po sequence for n^2+3</button>
+			<br><br>
+			<button type="submit" name="ar^n">Luke's Po modified geometric sequence for ar^n; when a=4,r=3</button>
+			<br><br>
+		</form>
+
+	</main>
 
 
 </body>

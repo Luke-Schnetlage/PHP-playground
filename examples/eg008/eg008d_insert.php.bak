@@ -1,0 +1,16 @@
+<?php
+/*
+INSERT INTO products(categoryID,productCode,productName,listPrice)
+VALUES (1,"lordshen","Lord Shen Figure 11 inches",15.50);
+*/
+require_once('eg008a_connect_database.php');
+
+$query = 'INSERT INTO products(categoryID,productCode,productName,listPrice)
+VALUES (1,"lordshen","Lord Shen Figure 11 inches",15.50)';
+
+$statement = $db->prepare($query);
+$statement->execute();
+$statement->closeCursor();
+include('eg008c_select.php');
+
+?>
