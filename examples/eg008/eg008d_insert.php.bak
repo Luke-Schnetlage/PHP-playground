@@ -1,16 +1,17 @@
 <?php
-/*
-INSERT INTO products(categoryID,productCode,productName,listPrice)
-VALUES (1,"lordshen","Lord Shen Figure 11 inches",15.50);
-*/
+//this does not work???
 require_once('eg008a_connect_database.php');
 
-$query = 'INSERT INTO products(categoryID,productCode,productName,listPrice)
-VALUES (1,"lordshen","Lord Shen Figure 11 inches",15.50)';
+$productCode = 'lordshen';
+$query = "DELETE FROM products WHERE productCode = :productCode;";
 
 $statement = $db->prepare($query);
+$statement->bindValue(':productCode',$productCode);
+
 $statement->execute();
 $statement->closeCursor();
 include('eg008c_select.php');
 
 ?>
+
+
