@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>eg003 ajax</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+<script>
+	function timeFunction() {
+		//window.alert("hello");	//for testing
+		var ajaxRequest;
+		try{
+			// Opera 8.0+, Firefox, Safari
+			ajaxRequest = new XMLHttpRequest();
+		} catch (e){
+			// Internet Explorer Browsers
+			try{
+				ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+			} catch (e) {
+				try{
+					ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+				} catch (e){
+					// Something went wrong
+					alert("Your browser broke!");
+					return false;
+				}
+			}
+		}
+		
+		ajaxRequest.onreadystatechange = function() {
+			if (ajaxRequest.readyState == 4) {
+				document.myForm.time.value = ajaxRequest.responseText;
+			}
+		}
+		
+		ajaxRequest.open("GET", "eg003_time.php", true);
+		ajaxRequest.send(null);
+		
+	}
+	
+	function timeFunction2() {
+		//window.alert("hello");	//for testing
+		var ajaxRequest;
+		try{
+			// Opera 8.0+, Firefox, Safari
+			ajaxRequest = new XMLHttpRequest();
+		} catch (e){
+			// Internet Explorer Browsers
+			try{
+				ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+			} catch (e) {
+				try{
+					ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+				} catch (e){
+					// Something went wrong
+					alert("Your browser broke!");
+					return false;
+				}
+			}
+		}
+		
+		ajaxRequest.onreadystatechange = function() {
+			if (ajaxRequest.readyState == 4) {
+				document.myForm2.time.value = ajaxRequest.responseText;
+			}
+		}
+		
+		ajaxRequest.open("GET", "eg003_time.php", true);
+		ajaxRequest.send(null);
+	}
+	
+</script>
+
+<form name="myForm">
+	<h2>ajax using onkeypress event</h2>
+	<p>Name: <input type="text" onkeypress="timeFunction();" name="username"> </p>
+	<p>Time: <input type="text" name="time"> </p>
+</form>
+
+<form name="myForm2">
+	<h2>ajax using onchange event</h2>
+	<p>Name: <input type="text" onchange="timeFunction2();" name="username"> </p>
+	<p>Time: <input type="text" name="time"> </p>
+</form>
+
+
+</body>
+
+</html>

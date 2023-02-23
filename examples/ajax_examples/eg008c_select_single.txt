@@ -1,0 +1,15 @@
+<?php 
+	require_once('eg008a_connect_database.php');
+	$productCode = filter_input(INPUT_GET, 'productCode');
+	//echo $productCode;
+	
+	$query = "SELECT * FROM products 
+				WHERE productCode LIKE :productCode
+				ORDER BY productID";
+	
+	$statement = $db->prepare($query);
+	$statement->bindValue(':productCode', "%".$productCode."%", PDO::PARAM_STR);
+	$statement->execute();
+	$p = $statement->fetch();
+	echo $p['productName'];
+?>

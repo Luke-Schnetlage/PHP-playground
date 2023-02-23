@@ -1,0 +1,106 @@
+<!-- 
+Luke Schnetlage
+CSCI 4000-10
+11/28/22
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Luke Schnetlage's kung fu school</title>
+    <meta charset="utf-8">
+    <link href="./main.css" rel="stylesheet" type="text/css">
+    <script>
+        function loadXMLDoc() {
+            var ajaxRequest;
+            try {
+                // Opera 8.0+, Firefox, Safari
+                ajaxRequest = new XMLHttpRequest();
+            } catch (e) {
+                // Internet Explorer Browsers
+                try {
+                    ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    try {
+                        ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e) {
+                        // Something went wrong
+                        alert("Your browser broke!");
+                        return false;
+                    }
+                }
+            }
+
+            ajaxRequest.onreadystatechange = function () {
+                if (ajaxRequest.readyState == 4) {
+                    //luke_schnetlage_search_single.php echoes
+                    // "$studiD|$name|$email|$gpa"
+                    //here we slice it along the pipes and bind the values to our form
+                    var response = ajaxRequest.responseText.split("|");
+
+                    document.single_search_form.studID.value = response[0];
+                    document.single_search_form.StudentName.value = response[1];
+                    document.single_search_form.Email.value = response[2];
+                    document.single_search_form.GPA.value = response[3];
+
+                }
+            }
+
+            var studentID = document.getElementById("studentID").value;
+            var queryString = "?studentID=" + studentID;
+            ajaxRequest.open("GET", "luke_schnetlage_search_single.php" + queryString, true);
+            ajaxRequest.send(null);
+
+            //window.alert(queryString);
+
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Luke Schnetlage's kung fu school - Search & Split</h1>
+    </header>
+
+    <main>
+        <h4>Search for students by Student ID</h4>
+        <br>
+        <!--Only interactable form  on the page-->
+        <form name="searchForm">
+            <label for="studentID"><b>Student ID:</b></label>
+            <input type="text" id="studentID" name="studentID "><br><br>
+            <input type="button" onclick="loadXMLDoc();" value="Search"><br><br>
+
+
+        </form>
+        <!--This is the form that is populated by our server query-->
+        <h4>Student information will be displayed below:</h4>
+        <form name="single_search_form">
+
+            <label for="studID">Student ID:</label>
+            <input type="text" id="studID" readonly><br>
+
+            <label for="StudentName">Student Name:</label>
+            <input type="text" id="StudentName" readonly><br>
+
+            <label for="Email">Email:</label>
+            <input type="text" id="Email" readonly><br>
+
+            <label for="GPA">GPA:</label>
+            <input type="text" id="GPA" readonly><br>
+        </form><br><br>
+
+
+        <br><br>
+        <a href="index.htm">Back to the first page</a>
+
+        <footer>
+            <p class="right">
+                &copy;
+                Luke Schnetlage Kung Fu School
+            </p>
+        </footer>
+    </main>
+</body>
+
+</html>
